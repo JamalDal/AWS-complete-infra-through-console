@@ -15,7 +15,8 @@ Name: vpc-dev-env
 
 CIDR range: 172.20.0.0/16
 
-### vpc-image
+![vpc-image](https://user-images.githubusercontent.com/97054844/179372660-ea0ab91b-d649-477f-9f57-a3e14aa1671b.png)
+
 
 ### Create Subnet
 Create four subnets: one public and one private subnet in the availability zone us-east-1a, and one public and one private subnet in the availability zone us-east-1b.
