@@ -86,25 +86,25 @@ NOTE: After completing the infrastructure, we should remove ports 80, 22 and 443
 ### Security group for launch configuration(web-server) (name: SG-LC)
 Select vpc-dev-env add SG-LB and SG-LB at port 80 and 443, SG-VPN at  port 22 allowed.
 
-### sg-lc image
+![SG-LC](https://user-images.githubusercontent.com/97054844/179372739-f544b584-7699-4a98-9d41-210616f7bfc4.png)
 
 ### Security group for database (name SG-DB)
 
 Select vpc-dev-env and SG-LC and MYSQL/Aurora port 3306 allowed.
 
-### sg-db image
+![sg-db](https://user-images.githubusercontent.com/97054844/179372741-c98cbf9e-9167-4f90-8bdd-bf433bf8ab01.png)
 
 
 ## Create IAM Role for EC2 service (name: s3FullAccessRoleForEC2)
 To provide s3 full-access to EC2
 
-### s3FullAccessRoleForEC2 image
+![s3FullAccessRoleForEC2](https://user-images.githubusercontent.com/97054844/179372742-c8f37560-fcd1-4c83-944c-1ecdcea9e725.png)
 
 
 ## Create IAM Role for CodeDeploy service (name: CodeDeployRoleforEC2)
 To provice CodeDeploy access
 
-###CodeDeployRoleforEC2 image
+![cdrole](https://user-images.githubusercontent.com/97054844/179372769-5d2e2f1c-6fe6-4938-8f45-57262d470dce.png)
 
 
 ## Create Launch Configuration 
@@ -127,7 +127,7 @@ Application LB and Internet facing
 
 Moreover, In configure routing create new target group and name is tg-dev-env.
 
-#### alb-dev-env image
+![alb-dev-env](https://user-images.githubusercontent.com/97054844/179372772-22a281cf-058e-44bb-ad57-a1081abb0c67.png)
 
 
 ## Create AutoScaling group (name: asg-dev-env)
@@ -137,13 +137,14 @@ Select tg-dev-env as target group to forward the traffic to specific targets.
 Here we can define Desired, Minimum and Maximum capacity.
 
 Note: In new console, AWS has removed ASG console
-### asg-dev-env image
+
+![asg-dev-env image](https://user-images.githubusercontent.com/97054844/179372774-b2e8801e-a82e-4a31-9dca-52cecfa83307.png)
 
 
 ## Create CodeDeploy 
 Create an application first and select Ec2/On-premises on the compute platform.
 
-### application-dev-env image
+![application-dev-env](https://user-images.githubusercontent.com/97054844/179372777-d3154881-48a7-4226-8382-41e562a97bed.png)
 
 Then create a deployment group (name: app-deploy-group-dev-env) and attach code to it to deploy an IAM role.
 
