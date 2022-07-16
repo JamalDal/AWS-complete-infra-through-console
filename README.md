@@ -183,6 +183,16 @@ Take a look at the AWS market place for turnkey ami (for VPN).Attach it to vpc-d
 
 https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html#Add_IGW_Attach_Gateway
 
+https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html
 
+https://aws.amazon.com/getting-started/hands-on/getting-started-with-aws-management-console/
+
+https://aws.amazon.com/blogs/architecture/
+
+https://docs.aws.amazon.com/cli/latest/reference/autoscaling/index.html
+
+https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html
+
+https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html
 
 
