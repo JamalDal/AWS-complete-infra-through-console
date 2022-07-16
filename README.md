@@ -32,15 +32,17 @@ Subnets CIDR-Ranges:
 
 •	private-subnet2-dev-env =172.20.64.0/24 us-east-1b
 
-### subnet image
+![subnet-image](https://user-images.githubusercontent.com/97054844/179372673-2d6481aa-185f-4a56-a99b-67bbfa220edc.png)
 
 Now, we create two route table, one for public (RT-public-dev-env) and other one for private (RT-private-dev-env).
 Then add them in VPC and after that associate subnets in them.
 
 
-### RT-public-dev-env--- image
+![RT-public-dev-env](https://user-images.githubusercontent.com/97054844/179372674-a7b76f5d-213b-4034-a0cd-9b168b1af0ea.png)
 
-### RT-private-dev-env-- image
+
+
+![RT-private-dev-env](https://user-images.githubusercontent.com/97054844/179372676-ee5c89bd-0541-40f3-a403-f5208df1105d.png)
 
 
 Now, create an internet gateway (name: igw-dev-env) attach it with vpc-dev-env & attatch the public router table (RT-public-dev-env) with it.
@@ -49,9 +51,12 @@ Now, create an internet gateway (name: igw-dev-env) attach it with vpc-dev-env &
 Then create a NAT gateway (NAT-dev-env) in public subnet with static IP (Elastic IP) and attached with RT-private-dev-env . This is to provide internet accessibility to private server.
 
 
-### igw image
+![igw](https://user-images.githubusercontent.com/97054844/179372678-21a31d0c-0287-4e8d-a993-c862831beb2e.png)
 
-### nat image
+
+
+![nat](https://user-images.githubusercontent.com/97054844/179372679-c0d3e5c3-bfdc-4bf5-9f54-dad3ecc0b6d9.png)
+
 
 
 ## Security Group
@@ -60,7 +65,8 @@ We may set up multiple security groups for various resources. Mention the name o
 ### Security group for load balancer (name: SG-LB)
 Select vpc-dev-env and open port HTTP (80) and HTTPS (443) for inbound traffic to all.
 
-### SG-LB image
+![SG-LB](https://user-images.githubusercontent.com/97054844/179372683-e9ae1c5c-c3b9-4371-b60f-56f5013c5aec.png)
+
 
 ### Security group for Redis (name: SG-Redis)
 Select vpc-dev-env and and open port 6379 from Webserver- security group.
@@ -71,7 +77,8 @@ Select vpc-dev-env and and open port 6379 from Webserver- security group.
 ### Security group for VPN (name: SG-VPN)
 Select vpc-dev-env and open ports 22, 80, 443, 1194, 12320, and 12321.
 
-#### SG-VPN image
+![SG-VPN](https://user-images.githubusercontent.com/97054844/179372684-d8b09f2a-f21d-4b07-85b0-b29ffc733e14.png)
+
 
 NOTE: After completing the infrastructure, we should remove ports 80, 22 and 443 from the SG-VPN.
 
